@@ -9,7 +9,7 @@ namespace Tyuiu.AnishchenkoVA.Sprint4.Task4.V19
             Console.Title = "Спринт #4 | Выполнил: Анищенко В. А. | ИИПБ-24-2";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #4                                                               *");
-            Console.WriteLine("* Тема: Одномерные массивы. (генератор случайных чисел)                   *");
+            Console.WriteLine("* Тема: Двумерные массивы. (ввод с клавиатуры)                            *");
             Console.WriteLine("* Задание #4                                                              *");
             Console.WriteLine("* Вариант #19                                                             *");
             Console.WriteLine("* Выполнил: Анищенко Виктор Александрович | ИИПБ-24-2                     *");
