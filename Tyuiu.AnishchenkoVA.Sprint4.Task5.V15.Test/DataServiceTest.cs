@@ -5,7 +5,7 @@ namespace Tyuiu.AnishchenkoVA.Sprint4.Task5.V15.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ValidCalculate()
         {
             DataService ds = new DataService();
             int[,] a = { { -8, 6, -9 }, { -9, 4, -8 }, { -9, 7, -9 } };
