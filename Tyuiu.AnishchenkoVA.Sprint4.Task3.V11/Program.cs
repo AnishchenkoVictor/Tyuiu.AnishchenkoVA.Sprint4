@@ -1,11 +1,10 @@
-﻿using Tyuiu.AnishchenkoVA.Sprint4.Task2.V10.Lib;
-namespace Tyuiu.AnishchenkoVA.Sprint4.Task2.V10
+﻿using Tyuiu.AnishchenkoVA.Sprint4.Task3.V11.Lib;
+namespace Tyuiu.AnishchenkoVA.Sprint4.Task3.V11
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Random rnd = new Random();
             DataService ds = new DataService();
             Console.Title = "Спринт #4 | Выполнил: Анищенко В. А. | ИИПБ-24-2";
             Console.WriteLine("***************************************************************************");
@@ -16,36 +15,38 @@ namespace Tyuiu.AnishchenkoVA.Sprint4.Task2.V10
             Console.WriteLine("* Выполнил: Анищенко Виктор Александрович | ИИПБ-24-2                     *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Дан одномерный целочисленный массив на 13 элементов                     *");
-            Console.WriteLine("* заполненный случайными в диапазоне от 1 до 6                            *");
-            Console.WriteLine("* подсчитать произведение нечетных элементов массива.                     *");
+            Console.WriteLine("* Дан двумерный целочисленный массив 5 на 5 элементов,                    *");
+            Console.WriteLine("* заполненный статическими значениями в диапазоне от 4 до 9.              *");
+            Console.WriteLine("* Подсчитайте количество нечетных элементов во всем массиве.              *");
+            Console.WriteLine("* {8,6,9,4,5} , {9,4,8,5,6} , {9,7,9,8,4} , {4,6,5,7,8} , {6,6,7,6,4}     *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            int len;
-            Console.Write("Введите длину массива: ");
-            len = Convert.ToInt32(Console.ReadLine());
+            int[,] matrx = { { 8, 6, 9, 4, 5 }, { 9, 4, 8, 5, 6 }, { 9, 7, 9, 8, 4 }, { 4, 6, 5, 7, 8 }, { 6, 6, 7, 6, 4 } };
+            int rows = matrx.GetUpperBound(0) + 1;
+            int cols = matrx.Length / rows;
 
-            int[] res = new int[len];
-            for (int i = 0; i < len; i++)
-            {
-                res[i] = rnd.Next(1,6);
-            }
-
-            Console.WriteLine();
             Console.WriteLine("Массив: ");
-            for (int i = 0; i < len; i++)
+
+            for (int i = 0; i < rows; i++)
             {
-                Console.Write(res[i] + "\t");
+                for (int j = 0; j < cols; j++)
+                {
+                    Console.Write($"{matrx[i, j]}  \t");
+                }
+                Console.WriteLine();
             }
+
             Console.WriteLine();
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
-            Console.Write("Произведение нечетных элементов массива = ");
-            Console.WriteLine(ds.Calculate(res));
+
+            Console.Write("Количество нечетных элементов = ");
+            Console.WriteLine(ds.Calculate(matrx));
             Console.ReadKey();
+
         }
     }
 }
